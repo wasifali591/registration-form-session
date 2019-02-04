@@ -12,7 +12,7 @@
     $html_data .='<th class="tableHead">Actions</th>';
     $html_data .='</tr>';
     $html_data .='</thead>';
-    if(mysqli_num_rows($result)){            
+    if(mysqli_num_rows($result)){           
 
         while($row=mysqli_fetch_assoc($result)){
             $html_data .='<tr>';
@@ -27,6 +27,7 @@
             $html_data .='</tr>';
         }
         echo json_encode(['status'=>'success','html'=> $html_data]);
+        
     }else{
         $html_data .='<tr>';                
         $html_data .='<td colspan="5" align="center">No Record Found</td>';

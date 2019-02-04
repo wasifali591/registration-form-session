@@ -1,26 +1,13 @@
 <!--
 * File Name  : index
-* Description : html code to design a registration form and a table to show the data 
-* Created date : 23/01/2019
+* Description : html code to design a login form
+* Created date : 1/02/2019
 * Author  : Md Wasif Ali
-* Comments : whole page is divided into to division: 1 for the registration form, another one for the table
+* Comments :
 -->
 
 <?php 
-    require_once("connect.php");
-    if (isset($_POST['signInButtonn'])) {
-        $username =$_POST['username'];
-        //echo $username;
-        $password = $_POST['password'];
-        $sql ="SELECT * FROM `user` WHERE `username` = '".$_POST['username']."' AND `password`='".$_POST['password']."'";
-        $result=mysqli_query($db,$sql);
-        if (mysqli_num_rows($result) > 0) {
-            //$rowlog = mysqli_fetch_array($result);
-		    $_SESSION['username'] = $username;
-            header("location:home.php");
-            exit();
-        }
-    }
+    require_once("login.php");
 ?>
 
 
@@ -48,7 +35,7 @@
 <body class="pageBody">
     <!-- division for the registration form -->
     <div class="container-fluid content">
-        <form id="registarForm"  method="post" action="index.php">
+        <form id="registarForm" method="post" action="index.php">
             <!--registration form header-->
             <div class=" row">
 
@@ -88,9 +75,10 @@
 
                     <div class="input form-group ">
                         <center>
-                
-                                <input type="submit" name="signInButtonn" class="btn btn-default buttonDesign" id="signInButtonn" value="Sign In">
-                       
+
+                            <input type="submit" name="signInButtonn" class="btn btn-default buttonDesign" id="signInButtonn"
+                                value="Sign In">
+
                         </center>
                     </div>
                     <div>

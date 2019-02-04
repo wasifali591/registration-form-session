@@ -1,29 +1,39 @@
+/**
+* File Name  : script
+* Description : js for add,update and remove data from a table . input taken from a form 
+* Created date : 14/01/2019
+* Author  : Md Wasif Ali
+* Comments : 
+*/
 $(function () {
-        loadData();
 
-        $('.form').on('submit', function (event) {
-            event.preventDefault();
-            $form = $(this);
-            if (isValid($form)) {
-                //console.log('OK');
-                crudRequest($form);
-            } else {
-                //console.log("missing fields");
-            }
-        });
+    loadData();
+
+    //after checking the validation of the form CRUD operation start
+    $('.form').on('submit', function (event) {
+        event.preventDefault();
+        $form = $(this);
+        if (isValid($form)) {
+            crudRequest($form);
+        }
+    });
 
 
-        $('.table').on('click', function (event) {
-            event.preventDefault();
-            var $anchor = $(event.target).parent('.icon');
-            var id = $anchor.attr('data-id');
-            if ($anchor.hasClass('icon')) {
-                //console.log(id);
-                getRecord($anchor.attr('id'), id);
-            }
-        });
+    $('.table').on('click', function (event) {
+        event.preventDefault();
+        var $anchor = $(event.target).parent('.icon');
+        var id = $anchor.attr('data-id');
+        if ($anchor.hasClass('icon')) {
+            getRecord($anchor.attr('id'), id);
+        }
+    });
 });
 
+/**  
+* function-name:loadData
+* description: display all data from database to table
+* comments:
+*/
 
 function loadData() {
     $.ajax({
@@ -37,11 +47,16 @@ function loadData() {
     });
 }
 
+/**  
+* function-name:getRecord
+* description: display the selected data on modal
+* comments:
+*/
 function getRecord(actionName, id) {
     var $modal = '';
     var $form = '';
     $.ajax({
-        url: 'get_record.php',
+        url: 'get-record.php',
         method: 'post',
         data: { id: id },
         success: function (response) {
@@ -67,6 +82,12 @@ function getRecord(actionName, id) {
         }
     })
 }
+
+/**  
+* function-name:crudRequest
+* description: apply the CRUD operation on the form
+* comments:
+*/
 function crudRequest($form) {
     resetMessage();
     $.ajax({
@@ -82,12 +103,16 @@ function crudRequest($form) {
                 showErrorMessage($form, response.message);
             }
             loadData();
-           // console.log(response);
+            // console.log(response);
         }
     });
 }
 
-
+/**  
+* function-name:showErrorMessage
+* description: display error message
+* comments:
+*/
 function showErrorMessage($form, message) {
     var $alert = $form.find('.status');
     $alert.addClass('alert');
@@ -95,13 +120,22 @@ function showErrorMessage($form, message) {
     $alert.html(message);
 }
 
+/**  
+* function-name:showSuccessMessage
+* description: display success message
+* comments:
+*/
 function showSuccessMessage($form, message) {
     var $alert = $form.find('.status');
     $alert.addClass('alert');
     $alert.addClass('alert-success');
     $alert.html(message);
 }
-
+/**  
+* function-name:resetMessage
+* description: clean all messages
+* comments:
+*/
 function resetMessage() {
     $('.status').removeClass('alert');
     $('.status').removeClass('alert-danger');
@@ -109,6 +143,11 @@ function resetMessage() {
     $('.status').html('');
 }
 
+/**  
+* function-name:isValid
+* description: check form validation
+* comments:
+*/
 function isValid($form) {
     var inputTagList = $form.find('input');
     for (var i = 0; i < inputTagList.length; i++) {

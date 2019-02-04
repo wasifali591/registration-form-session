@@ -112,3 +112,7 @@
   .tdalign {
 	text-align: center;
   }
+
+  .moveright{
+	  float: right;
+  }

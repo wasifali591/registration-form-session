@@ -1,3 +1,11 @@
+<!--
+* File Name  : update-record
+* Description : php code to update database
+* Created date : 1/02/2019
+* Author  : Md Wasif Ali
+* Comments : 
+-->
+
 <?php
     require_once('connect.php');
         $id=$_POST['id'];

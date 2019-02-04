@@ -1,40 +1,13 @@
 <!--
-* File Name  : index
+* File Name  : registration-form
 * Description : html code to design a registration form and a table to show the data 
-* Created date : 23/01/2019
+* Created date : 1/02/2019
 * Author  : Md Wasif Ali
-* Comments : whole page is divided into to division: 1 for the registration form, another one for the table
+* Comments : 
 -->
 
 <?php
-    require_once('connect.php');
-    if (isset($_POST['registerButton'])) {
-        //receive all input values from the form
-        $username =$_POST['username'];
-        $email =$_POST['email'];
-        $newPassword = $_POST['password'];
-        $confirmPassword =$_POST['confirmpassword'];
-    
-        if ($newPassword === $confirmPassword) {
-
-            $sql ="SELECT * FROM `user` WHERE `username` = '".$_POST['username']."'";
-            $query_run=mysqli_query($db,$sql);
-            if(mysqli_num_rows($query_run)>0){
-                echo '<script type="text/javascript">alert("User already exists. Try another user name")</script>';
-
-            }else{
-                $sql1="INSERT INTO `user`(`username`,`email`,`password`) VALUES('".$_POST['username']."','".$_POST['email']."','".$_POST['password']."')";
-                $result=mysqli_query($db,$sql1);
-                if ($result) {
-                    $_SESSION['username'] = $username;
-                    header("location:home.php");
-                    exit();
-                }
-            }
-        }else{
-            echo '<script type="text/javascript">alert("password not matched")</script>';
-        } 
-    }
+    require_once('registration-form-server.php');
 ?>
 
 
@@ -86,32 +59,36 @@
                 </div>
 
                 <div class="registrationFormBody form-group col-xs-12 col-sm-8 col-md-6 col-lg-4">
-
                     <div class=" form-group">
                         <label>Name<span class="requiredField">*</span></label>
                         <div class="box">
-                            <input type="text" class=" form-control formControl" name="username" id="username">
-                            <!-- <label class="error"id="wrongName"> </label> -->
+                            <input type="text" class=" form-control formControl" name="username" id="username"  required>
                         </div>
+                        <label class="error" id="wrongName"></label>
+                         
                     </div>
 
                     <div class=" form-group ">
                         <label>Email<span class="requiredField">*</span></label>
                         <div class="box">
-                            <input type="email" class="formControl form-control" name="email">
+                            <input type="email" class="formControl form-control" name="email" id="email"  required>
                         </div>
+                        <label class="error"id="wrongEmail"> </label>
                     </div>
-                    <div class=" form-group ">
+                    <div class=" form-group">
                         <label>Password<span class="requiredField">*</span></label>
                         <div class="box">
-                            <input type="password" class="formControl form-control" name="password">
+                            <input type="password" class="formControl form-control " name="password" id="password" required title="Password must contain the following:  1.A lower case letter  2.A capital letter  3.A number  4.Minimum 8 characters" data-toggle="tooltip">
+                            <span class="glyphicon glyphicon-info-sign moveright" id="infoIcon"></span>
                         </div>
+                        <label class="error"id="wrongPassword"> </label>
                     </div>
                     <div class=" form-group ">
                         <label>Confirm Password<span class="requiredField">*</span></label>
                         <div class="box">
-                            <input type="password" class="formControl form-control" name="confirmpassword">
+                            <input type="password" class="formControl form-control" name="confirmPassword" id="confirmPassword" required>
                         </div>
+                        <label class="error"id="wrongConPassword"> </label>
                     </div>
 
                     <div class="input form-group ">
@@ -136,7 +113,7 @@
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="../bootstrap/js/bootstrap.min.js"></script>
-    <!-- <script src="validate-form.js"></script> -->
+    <script src="validate-form.js"></script>
 </body>
 
 </html>

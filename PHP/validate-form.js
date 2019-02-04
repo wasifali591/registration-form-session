@@ -1,48 +1,100 @@
+/**
+* File Name  : validation-form
+* Description : js for validate form 
+* Created date : 1/02/2019
+* Author  : Md Wasif Ali
+* Comments : 
+*/
+$(function () {
+	$('#username').on('keypress blur keyup keydown change', function (e) {
+		validateName();
+	});
 
+	$('#email').on('keypress blur keyup keydown change', function (e) {
+		validateEmail();
+	});
 
-$(function(){
-    $("#username").keypress(function(){  
-        validateName() 
-    });
+	$('#password').on('keypress blur keyup keydown change', function (e) {
+		validatePassword();
+	});
+	$('#confirmPassword').on('keypress blur keyup keydown change', function (e) {
+		checkPassword();
+	});
+
+	$('#password').tooltip({
+		trigger: 'manual',
+	});
+	$('#infoIcon').click(function(){
+		$('#password').tooltip('toggle');
+	});
 
 });
 
-/* validate the name*/
-function validateName(){
+/**  
+* function-name:validateName
+* description: validate the name
+* comments:
+*/
+function validateName() {
 	name = document.getElementById('username').value;
-	if(name===''){
-		document.getElementById("wrongName").innerHTML="Enter your name.";
-		nameValidate=0;
-		
-	}else{
-		document.getElementById("wrongName").innerHTML="";
-		nameValidate=1;
+	if (name === '') {
+		document.getElementById("wrongName").innerHTML = "Enter your name.";
+		nameValidate = 0;
+
+	} else {
+		document.getElementById("wrongName").innerHTML = "";
+		nameValidate = 1;
 	}
 }
 
-/* validate email address */
-function validateEmail(email){
-        var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
-        if (reg.test(email.value) == false) 
-        {
-			document.getElementById("wrongEmail").innerHTML="Invalid Email Address<br>name@mail.com";
-			emailValidate=0;
-        }else{
-			document.getElementById("wrongEmail").innerHTML="";
-			emailValidate=1;
-		}
+/**  
+* function-name:validateEmail
+* description: validate email address
+* comments:
+*/
+function validateEmail() {
+	email = document.getElementById('email').value;
+	var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+	if (reg.test(email) == false) {
+		document.getElementById("wrongEmail").innerHTML = "Enter a valid Email Address.";
+		emailValidate = 0;
+	} else {
+		document.getElementById("wrongEmail").innerHTML = "";
+		emailValidate = 1;
+	}
 }
 
-/*validate password */
-function validatePassword(psw){
+/**  
+* function-name:validatePassword
+* description: validate password
+* comments:
+*/
+function validatePassword() {
+	psw = document.getElementById('password').value;
 	var reg = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
-	if (reg.test(psw.value) == false) 
-        {
-            document.getElementById("wrongPassword").innerHTML=
-			"Password must contain the following:<br>1.A lower case letter<br>2.A capital letter<br>3.A number<br>4.Minimum 8 characters";
-			passwordValidate=0;
-        }else{
-			document.getElementById("wrongPassword").innerHTML="";
-			passwordValidate=1;
-		}
+	if (reg.test(psw) == false) {
+		document.getElementById("wrongPassword").innerHTML ="Enter a valid password.";
+		passwordValidate = 0;
+	} else {
+		document.getElementById("wrongPassword").innerHTML = "";
+		passwordValidate = 1;
+	}
+}
+
+/**  
+* function-name:confirmPassword
+* description: check password and confirm password are same
+* comments:
+*/
+function checkPassword() {
+	password = document.getElementById('password').value;
+	confirmPassword = document.getElementById('confirmPassword').value;
+	if (confirmPassword === password) {
+		document.getElementById("wrongConPassword").innerHTML = "";
+		nameValidate = 1;
+	} else {
+		document.getElementById("wrongConPassword").innerHTML = "Password didn't match.";
+		nameValidate = 0;
+
+	}
 }

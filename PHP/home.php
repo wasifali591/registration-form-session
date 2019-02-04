@@ -1,35 +1,12 @@
 <!--
-* File Name  : index
-* Description : html code to design a registration form and a table to show the data 
-* Created date : 23/01/2019
+* File Name  : home
+* Description : html code to  show  user details 
+* Created date : 1/02/2019
 * Author  : Md Wasif Ali
-* Comments : whole page is divided into to division: 1 for the registration form, another one for the table
+* Comments : whole page is divided into to division: 1 for a navbar, another one to show user details
 -->
 <?php 
-    include('connect.php');
-	$username = $_SESSION['username'];
-	$sql = "SELECT * FROM `user` WHERE `username` = '".$username."'";
-	$result = mysqli_query($db,$sql);
-	if(mysqli_num_rows($result)>0)
-	{
-		$row = mysqli_fetch_array($result);
-		$id = $row["id"];
-		$username=$row["username"];
-		$email=$row["email"];
-		$password=$row["password"];
-	}
-	else
-	{
-		echo "No record found";
-    }
-    // if (isset($_POST['logOutButtonn'])){
-    //     session_destroy();
-	// 	$id = "";
-	// 	$username="";
-	// 	$email="";
-	// 	$password="";
-    //     header("inde:index.php");
-    // }
+    include('user-details.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -102,13 +79,6 @@
                                     <?php echo $row["password"]; ?></label>
 
                             </div>
-                            <!-- <div class="input form-group ">
-                                <center>
-                                    <input type="submit" name="logOutButtonn" class="btn btn-default buttonDesign " id="logOutButtonn"
-                                        value="Log Out">
-                                </center>
-                            </div> -->
-
                         </div>
                         <div class=" form-group col-xs-0 col-sm-2 col-md-3 col-lg-4">
 
@@ -119,7 +89,7 @@
             </div>
         </div>
     </div>
-       
+
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
