@@ -22,6 +22,7 @@
             $html_data .='<td class="tdalign">'.$row['password'].'</td>';
             $html_data .='<td class="tdalign">';
             $html_data .='<a data-id="'.$row['id'].'" class="icon" id="update" href="#" data-toggle="modal" data-target="#update-modal"><i class="glyphicon glyphicon-edit"></i></a>';
+            $html_data .='&nbsp &nbsp &nbsp';
             $html_data .='<a data-id="'.$row['id'].'" class="icon" id="delete" href="#" data-toggle="modal" data-target="#delete-modal"><i class="glyphicon glyphicon-trash"></i></a>';
             $html_data .='</td>';
             $html_data .='</tr>';
