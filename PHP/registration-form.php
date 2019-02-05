@@ -77,9 +77,12 @@
                     </div>
                     <div class=" form-group">
                         <label>Password<span class="requiredField">*</span></label>
-                        <div class="box">
-                            <input type="password" class="formControl form-control " name="password" id="password" required title="Password must contain the following:  1.A lower case letter  2.A capital letter  3.A number  4.Minimum 8 characters" data-toggle="tooltip">
-                            <span class="glyphicon glyphicon-info-sign moveright" id="infoIcon"></span>
+                        <div class="box input-group input-group-unstyled">
+                            <input type="password" class="formControl form-control " name="password" id="password" required data-html="true" title="Password must contain the following:<br>1. A lower case letter<br>2. A capital letter<br>3. A number<br>4. Minimum 8 characters" data-toggle="tooltip">
+                            <span class="input-group-addon">
+                                <i class="glyphicon glyphicon-info-sign" id="infoIcon"> 
+                                </i>
+                            </span>
                         </div>
                         <label class="error"id="wrongPassword"> </label>
                     </div>
