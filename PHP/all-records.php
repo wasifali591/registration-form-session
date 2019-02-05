@@ -87,10 +87,19 @@
                         <div class="status">
                             
                         </div>
+                        <div class="form-group">
+                                <input type="text" class="form-control username"  name="username" placeholder="Name" readonly="true">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control email"  name="email" placeholder="email" readonly="true">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control password" name="password" placeholder="password" readonly="true">
+                            </div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-danger">Delete</button>
+                        <button type="submit" class="btn btn-danger" id="deleteButton">Delete</button>
                     </div>
                 </div>
             </form>

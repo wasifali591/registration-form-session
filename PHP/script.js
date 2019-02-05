@@ -6,6 +6,7 @@
 * Comments : 
 */
 $(function () {
+    $('#deleteButton').show();
 
     loadData();
 
@@ -27,8 +28,11 @@ $(function () {
             getRecord($anchor.attr('id'), id);
         }
     });
-});
 
+    $('#deleteButton').click(function(){
+        $('#deleteButton').hide();
+    });
+});
 /**  
 * function-name:loadData
 * description: display all data from database to table
@@ -53,6 +57,7 @@ function loadData() {
 * comments:
 */
 function getRecord(actionName, id) {
+    $('#deleteButton').show();
     var $modal = '';
     var $form = '';
     $.ajax({
