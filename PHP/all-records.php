@@ -1,10 +1,4 @@
-<!--
-* File Name  : all-records
-* Description : html code to display all registered members data 
-* Created date : 1/02/2019
-* Author  : Md Wasif Ali
-* Comments : whole page is divided into to division: 1 for the registration form, another one for the table
--->
+
 <!DOCTYPE html>
 <html lang="en">
 
