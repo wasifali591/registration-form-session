@@ -7,6 +7,7 @@
 -->
 
 <?php 
+    //$_GET['errorMessage']='';
     require_once("connect.php");
     if (isset($_POST['signInButtonn'])) {
         $username =$_POST['username'];
@@ -19,6 +20,9 @@
 		    $_SESSION['username'] = $username;
             header("location:home.php");
             exit();
+        }else{
+            
+            header("location:index.php?error=1");
         }
     }
 ?>

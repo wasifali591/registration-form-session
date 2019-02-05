@@ -59,6 +59,13 @@
                 </div>
 
                 <div class="registrationFormBody form-group col-xs-12 col-sm-8 col-md-6 col-lg-4">
+                <?php if(isset($_GET['error'])==true) { ?>
+                    <div class=" form-group">
+                        <label class="error" id="errorMessage">You have entered an invalid username or password.</label>   
+                    </div>
+                <?php
+                    } ?>
+                    
 
                     <div class=" form-group">
                         <label>User Name<span class="requiredField">*</span></label>
