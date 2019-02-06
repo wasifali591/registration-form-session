@@ -101,7 +101,7 @@
 	color: #088084;
   }
   
-  .navbar .logout {
+  .navbar .moveright {
 	  float: right;
 	}
   .navbar .navlink.active {
@@ -111,8 +111,4 @@
 
   .tdalign {
 	text-align: center;
-  }
-
-  .moveright{
-	  float: right;
   }

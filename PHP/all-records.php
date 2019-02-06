@@ -26,18 +26,32 @@
         <div class="row">
             <div class="navbar  col-xs-12 col-sm-12 col-md-12 col-lg-12">
                 <a class="navlink" href="home.php">Home</a>
-                <a class="active navlink" href="#all-records">All Records</a>
-                <a class="navlink logout" href="logout.php"><i class="glyphicon glyphicon-log-out"></i> Logout</a>
+                <a class="active navlink" href="#all-records">User Details</a>
+                <a class="navlink moveright" href="logout.php"><i class="glyphicon glyphicon-log-out"></i> Logout</a>
             </div>
         </div>
         <div class="row">
             <div class="col-xs-0 col-sm-0 col-md-2 col-lg-3"></div>
             <div class="col-xs-12 col-sm-12 col-md-8 col-lg-6">
-            <table class="table table-striped">
+            <table class="table table-striped dataTable">
             
             </table>
             </div>
-            <div class="col-xs-0 col-sm-0 col-md-2 col-lg-3"></div>
+            <div class="col-xs-0 col-sm-0 col-md-2 col-lg-3">
+                <table class="table table-striped tableNotes">
+                    <thead>
+                        <tr>
+                            <th class="tableHead">Notes</th>
+                        </tr>
+                    </thead>         
+                </table>
+                <div class="box input-group input-group-unstyled">
+                            <input type="text" class="formControl form-control " name="notes" id="notes" required data-html="true">
+                            <span class="input-group-addon">
+                                <i class="glyphicon glyphicon-send" id="infoIcon"></i>
+                            </span>
+                        </div>
+                </div>
         </div>
     </div>
      <!-- Modal -->
@@ -58,11 +72,11 @@
                                 <input type="text" class="form-control username"  name="username" placeholder="Name">
                             </div>
                             <div class="form-group">
-                                <input type="text" class="form-control email"  name="email" placeholder="email">
+                                <input type="text" class="form-control email"  name="email" placeholder="email" readonly="true">
                             </div>
-                            <div class="form-group">
+                            <!-- <div class="form-group">
                                 <input type="text" class="form-control password" name="password" placeholder="password">
-                            </div>
+                            </div> -->
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

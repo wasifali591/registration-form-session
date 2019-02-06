@@ -20,7 +20,7 @@ $(function () {
     });
 
 
-    $('.table').on('click', function (event) {
+    $('.dataTable').on('click', function (event) {
         event.preventDefault();
         var $anchor = $(event.target).parent('.icon');
         var id = $anchor.attr('data-id');
@@ -45,7 +45,7 @@ function loadData() {
         method : 'get',
         success : function (response) {
             var response = $.parseJSON(response);
-            $('.table').html(response.html);
+            $('.dataTable').html(response.html);
             //console.log(response);
         }
     });

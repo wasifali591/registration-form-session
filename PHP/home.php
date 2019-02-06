@@ -35,8 +35,9 @@
         <div class="row">
             <div class="navbar  col-xs-12 col-sm-12 col-md-12 col-lg-12">
                 <a class="active navlink" href="#home">Home</a>
-                <a class="navlink" href="all-records.php">All Records</a>
-                <a class="navlink logout" href="logout.php"><i class="glyphicon glyphicon-log-out"></i> Logout</a>
+                <a class="navlink" href="all-records.php">User Details</a>
+                <a class="navlink moveright" href="logout.php"><i class="glyphicon glyphicon-log-out"></i> Logout</a>
+                <a class="navlink moveright" href="">Change Password</a>
             </div>
         </div>
         <div class="row">
@@ -71,11 +72,11 @@
                             <div class=" form-group">
                                 <label>User Id:
                                     <?php echo $row["id"]; ?></label><br>
-                                <label>User Id:
+                                <label>Name:
                                     <?php echo $row["username"]; ?></label><br>
-                                <label>User Id:
+                                <label>Email:
                                     <?php echo $row["email"]; ?></label><br>
-                                <label>User Id:
+                                <label>Password:
                                     <?php echo $row["password"]; ?></label>
 
                             </div>
