@@ -39,7 +39,7 @@
                 <table class="table table-striped dataTable">
             
                 </table>
-                
+
                 <button type="Button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#add">
                     <i class="glyphicon glyphicon-plus"></i>
                     Add New Record
@@ -48,13 +48,15 @@
 
             <div class="col-xs-0 col-sm-0 col-md-2 col-lg-3">
                 <table class="table table-striped tableNotes">
-                    <thead>
-                        <tr>
-                            <th class="tableHead">Notes</th>
-                        </tr>
-                    </thead>         
+                    
                 </table>
-
+                <div class="box input-group input-group-unstyled">
+                    <input type="text" class="formControl form-control " name="note" id="note" required data-html="true" >
+                    <span class="input-group-addon">
+                        <i class="glyphicon glyphicon-send" id="noteIcon"> 
+                        </i>
+                    </span>
+                </div>
             </div>
             
         </div>

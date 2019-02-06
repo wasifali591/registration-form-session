@@ -9,6 +9,7 @@ $(function () {
     $('#deleteButton').show();
 
     loadData();
+    loadNote();
 
     //after checking the validation of the form CRUD operation start
     $('.form').on('submit', function (event) {
@@ -29,7 +30,7 @@ $(function () {
         }
     });
 
-    $('#deleteButton').click(function(){
+    $('#deleteButton').click(function () {
         $('#deleteButton').hide();
     });
 
@@ -57,11 +58,23 @@ $(function () {
 
 function loadData() {
     $.ajax({
-        url : 'read-database.php',
-        method : 'get',
-        success : function (response) {
+        url: 'read-database.php',
+        method: 'get',
+        success: function (response) {
             var response = $.parseJSON(response);
             $('.dataTable').html(response.html);
+            //console.log(response);
+        }
+    });
+}
+
+function loadNote() {
+    $.ajax({
+        url: 'read-note.php',
+        method: 'get',
+        success: function (response) {
+            var response = $.parseJSON(response);
+            $('.tableNotes').html(response.html);
             //console.log(response);
         }
     });
