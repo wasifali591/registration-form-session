@@ -21,7 +21,7 @@
 </head>
 
 <body class="pageBody">
-    <!-- division for the registration form -->
+
     <div class="container-fluid content">
         <div class="row">
             <div class="navbar  col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -31,12 +31,21 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-xs-0 col-sm-0 col-md-2 col-lg-3"></div>
-            <div class="col-xs-12 col-sm-12 col-md-8 col-lg-6">
-            <table class="table table-striped dataTable">
-            
-            </table>
+            <div class="col-xs-0 col-sm-0 col-md-2 col-lg-3">
             </div>
+
+            <div class="col-xs-12 col-sm-12 col-md-8 col-lg-6">
+
+                <table class="table table-striped dataTable">
+            
+                </table>
+                
+                <button type="Button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#add">
+                    <i class="glyphicon glyphicon-plus"></i>
+                    Add New Record
+                </button>
+            </div>
+
             <div class="col-xs-0 col-sm-0 col-md-2 col-lg-3">
                 <table class="table table-striped tableNotes">
                     <thead>
@@ -45,14 +54,45 @@
                         </tr>
                     </thead>         
                 </table>
-                <div class="box input-group input-group-unstyled">
-                            <input type="text" class="formControl form-control " name="notes" id="notes" required data-html="true">
-                            <span class="input-group-addon">
-                                <i class="glyphicon glyphicon-send " id="notesIcon"></i>
-                            </span>
-                        </div>
-                </div>
+
+            </div>
+            
         </div>
+    </div>
+
+     <!-- add data Modal -->
+     <div class="modal fade" id="add" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <form class="form" id="add-form" method="post" action="add-record.php">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Add New Data</h4>
+                </div>
+
+                <div class="modal-body">
+                    <div class="form-group">
+                        <div class="status">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="username" placeholder="Name">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="email" placeholder="Email">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="password" placeholder="Password">
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
     </div>
      <!-- Modal -->
      <div class="modal fade" id="update-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
