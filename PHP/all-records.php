@@ -48,7 +48,7 @@
                 <div class="box input-group input-group-unstyled">
                             <input type="text" class="formControl form-control " name="notes" id="notes" required data-html="true">
                             <span class="input-group-addon">
-                                <i class="glyphicon glyphicon-send" id="infoIcon"></i>
+                                <i class="glyphicon glyphicon-send " id="notesIcon"></i>
                             </span>
                         </div>
                 </div>
@@ -119,6 +119,10 @@
             </form>
         </div>
     </div>
+
+
+   
+
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->

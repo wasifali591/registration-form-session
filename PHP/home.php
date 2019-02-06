@@ -37,7 +37,7 @@
                 <a class="active navlink" href="#home">Home</a>
                 <a class="navlink" href="all-records.php">User Details</a>
                 <a class="navlink moveright" href="logout.php"><i class="glyphicon glyphicon-log-out"></i> Logout</a>
-                <a class="navlink moveright" href="">Change Password</a>
+                <a class="navlink moveright" href="#" data-toggle="modal" data-target="#changePassword-modal">Change Password</a>
             </div>
         </div>
         <div class="row">
@@ -88,6 +88,40 @@
 
                 </form>
             </div>
+        </div>
+    </div>
+
+     <!--change password modal-->
+     <div class="modal fade" id="changePassword-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <form class="form" id="delete-form" method="post" action="change-password.php">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Do you really want to delete the data?</h4>
+                    </div>
+                    
+                    <div class="modal-body">
+                        <input type="hidden" class="id" name="id">
+                        <div class="status">
+                            
+                        </div>
+                        <div class="form-group">
+                                <input type="text" class="form-control" id="oldPassword" name="oldPassword"  placeholder="Old Password">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="newPassword" name="newPassword" placeholder="New Password">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password">
+                            </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-success" id="submitButton">Submit</button>
+                    </div>
+                </div>
+            </form>
         </div>
     </div>
 

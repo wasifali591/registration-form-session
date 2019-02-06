@@ -17,7 +17,7 @@
         $result=mysqli_query($db,$sql);
         if (mysqli_num_rows($result) > 0) {
             //$rowlog = mysqli_fetch_array($result);
-		    $_SESSION['username'] = $username;
+            $_SESSION['username'] = $username;
             header("location:home.php");
             exit();
         }else{

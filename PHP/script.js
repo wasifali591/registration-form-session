@@ -32,6 +32,22 @@ $(function () {
     $('#deleteButton').click(function(){
         $('#deleteButton').hide();
     });
+
+    // $('#notes').change(function(){
+    //     $.ajax({
+    //         type: "POST",
+    //         url: "add-notes.php",
+    //        data: {text:$(this).val()}
+    //     });
+    // });
+
+    // $('#notesIcon').click(function(){
+    //     $.ajax({
+    //         type: "POST",
+    //         url: "add-notes.php",
+    //     });
+    // });
+
 });
 /**  
 * function-name:loadData

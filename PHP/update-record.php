@@ -5,13 +5,13 @@
         $id=$_POST['id'];
         $username=$_POST['username'];
         $email=$_POST['email'];
-        $password=$_POST['password'];
+        //$password=$_POST['password'];
 
-        $sql="UPDATE `user` SET `username`=?,`email`=?,`password`=? WHERE `id`=?";
+        $sql="UPDATE `user` SET `username`=?,`email`=? WHERE `id`=?";
         $stmt=mysqli_prepare($db,$sql);
 
         if(is_object($stmt)){
-            mysqli_stmt_bind_param($stmt,'sssi',$username,$email,$password,$id);           
+            mysqli_stmt_bind_param($stmt,'ssi',$username,$email,$id);           
             mysqli_stmt_execute($stmt);
            
             //mysqli_stmt_fetch($stmt);
