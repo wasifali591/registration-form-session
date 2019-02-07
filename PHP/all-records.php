@@ -40,7 +40,7 @@
             
                 </table>
 
-                <button type="Button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#add">
+                <button type="Button" class="btn btn-primary btn-sm buttonDesign" data-toggle="modal" data-target="#add">
                     <i class="glyphicon glyphicon-plus"></i>
                     Add New Record
                 </button>
