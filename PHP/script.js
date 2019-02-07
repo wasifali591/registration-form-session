@@ -34,20 +34,24 @@ $(function () {
         $('#deleteButton').hide();
     });
 
-    // $('#notes').change(function(){
+    // $('#noteIcon').click(function(){
     //     $.ajax({
-    //         type: "POST",
     //         url: "add-notes.php",
-    //        data: {text:$(this).val()}
+    //         method: "get",
+    //         success: function(response){
+    //             var response = $.parseJSON(response);
+    //             if (response.status == 'success') {
+    //                 console.log("note added successfully.");
+    //             }
+    //             else if(response.status == 'error'){
+    //                 console.log("error");
+    //             }
+
+    //         }
+            
     //     });
     // });
 
-    // $('#notesIcon').click(function(){
-    //     $.ajax({
-    //         type: "POST",
-    //         url: "add-notes.php",
-    //     });
-    // });
 
 });
 /**  

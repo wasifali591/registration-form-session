@@ -49,14 +49,17 @@
             <div class="col-xs-0 col-sm-0 col-md-2 col-lg-3">
                 <table class="table table-striped tableNotes">
                     
+                    
                 </table>
-                <div class="box input-group input-group-unstyled">
-                    <input type="text" class="formControl form-control " name="note" id="note" required data-html="true" >
-                    <span class="input-group-addon">
-                        <i class="glyphicon glyphicon-send" id="noteIcon"> 
-                        </i>
-                    </span>
-                </div>
+                <form method="post" action="add-notes.php">
+                    <div class="box form-group">
+                        <input type="text" class="formControl form-control " name="note" id="note" >
+                        <button type="submit" class="buttonDesign" name="noteButton" id="noteButton">
+                            <i class="glyphicon glyphicon-send" id="noteIcon"> 
+                            </i>
+                        </button>
+                    </div>
+                </form>
             </div>
             
         </div>
