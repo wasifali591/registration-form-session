@@ -94,11 +94,11 @@
      <!--change password modal-->
      <div class="modal fade" id="changePassword-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog" role="document">
-            <form class="form" id="delete-form" method="post" action="change-password.php">
+            <form class="form" id="changePassword" method="post" action="change-password.php">
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title" id="myModalLabel">Do you really want to delete the data?</h4>
+                        <h4 class="modal-title" id="myModalLabel">Change your password.</h4>
                     </div>
                     
                     <div class="modal-body">
@@ -117,7 +117,7 @@
                             </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal" id="closeButton">Close</button>
                         <button type="submit" class="btn btn-success" id="submitButton">Submit</button>
                     </div>
                 </div>
@@ -129,6 +129,7 @@
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="../bootstrap/js/bootstrap.min.js"></script>
+    <script src="home.js"></script>
 </body>
 
 </html>
